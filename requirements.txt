@@ -1,0 +1,9 @@
+numpy>=1.24
+scipy>=1.10
+matplotlib>=3.7
+pyvista>=0.43
+pyvistaqt>=0.11
+PyQt5>=5.15
+imageio>=2.28
+ 
+imageio[ffmpeg]

@@ -1,0 +1,212 @@
+# experiments.toml
+# Configuration file for running batch simulations
+#
+# Each [[experiment]] section defines one complete simulation run.
+# All 5 models (1D, 2D polar, 2D cylindrical, 2D combined, 3D) will be run
+# with the same physical parameters.
+#
+# To add a new experiment, copy an [[experiment]] block and modify the parameters.
+
+# =============================================================================
+# EXPERIMENT 1: Baseline parameters
+# =============================================================================
+[[experiment]]
+name = "baseline"
+description = "Standard parameters from literature"
+
+D_U  = 0.1
+D_W  = 0.2
+CHI  = 8.3
+ALPHA = 1.0
+BETA  = 0.73
+GAMMA = 0.025
+W_0   = 1.0
+
+# =============================================================================
+# CHI (chemotaxis) sweep
+# =============================================================================
+[[experiment]]
+name = "high_chemotaxis"
+description = "Increased chemotactic sensitivity"
+
+D_U  = 0.1
+D_W  = 0.2
+CHI  = 8.8   # Increased from 8.3
+ALPHA = 1.0
+BETA  = 0.73
+GAMMA = 0.025
+W_0   = 1.0
+
+[[experiment]]
+name = "low_chemotaxis"
+description = "Decreased chemotactic sensitivity"
+
+D_U  = 0.1
+D_W  = 0.2
+CHI  = 7.8   # Decreased from 8.3
+ALPHA = 1.0
+BETA  = 0.73
+GAMMA = 0.025
+W_0   = 1.0
+
+# =============================================================================
+# D_U (U diffusion) sweep
+# =============================================================================
+[[experiment]]
+name = "low_D_U"
+description = "Lower U diffusion"
+
+D_U  = 0.085
+D_W  = 0.2
+CHI  = 8.3
+ALPHA = 1.0
+BETA  = 0.73
+GAMMA = 0.025
+W_0   = 1.0
+
+[[experiment]]
+name = "high_D_U"
+description = "Higher U diffusion"
+
+D_U  = 0.115
+D_W  = 0.2
+CHI  = 8.3
+ALPHA = 1.0
+BETA  = 0.73
+GAMMA = 0.025
+W_0   = 1.0
+
+# =============================================================================
+# D_W (W diffusion) sweep
+# =============================================================================
+[[experiment]]
+name = "low_D_W"
+description = "Lower W diffusion"
+
+D_U  = 0.1
+D_W  = 0.15
+CHI  = 8.3
+ALPHA = 1.0
+BETA  = 0.73
+GAMMA = 0.025
+W_0   = 1.0
+
+[[experiment]]
+name = "high_D_W"
+description = "Higher W diffusion"
+
+D_U  = 0.1
+D_W  = 0.3
+CHI  = 8.3
+ALPHA = 1.0
+BETA  = 0.73
+GAMMA = 0.025
+W_0   = 1.0
+
+# =============================================================================
+# ALPHA sweep
+# =============================================================================
+[[experiment]]
+name = "low_alpha"
+description = "Reduced ALPHA (0.8x baseline)"
+
+D_U  = 0.1
+D_W  = 0.2
+CHI  = 8.3
+ALPHA = 0.8
+BETA  = 0.73
+GAMMA = 0.025
+W_0   = 1.0
+
+[[experiment]]
+name = "high_alpha"
+description = "Increased ALPHA (1.2x baseline)"
+
+D_U  = 0.1
+D_W  = 0.2
+CHI  = 8.3
+ALPHA = 1.2
+BETA  = 0.73
+GAMMA = 0.025
+W_0   = 1.0
+
+# =============================================================================
+# BETA sweep
+# =============================================================================
+[[experiment]]
+name = "low_beta"
+description = "Reduced BETA (~0.6)"
+
+D_U  = 0.1
+D_W  = 0.2
+CHI  = 8.3
+ALPHA = 1.0
+BETA  = 0.60
+GAMMA = 0.025
+W_0   = 1.0
+
+[[experiment]]
+name = "high_beta"
+description = "Increased BETA (~0.8)"
+
+D_U  = 0.1
+D_W  = 0.2
+CHI  = 8.3
+ALPHA = 1.0
+BETA  = 0.80
+GAMMA = 0.025
+W_0   = 1.0
+
+# =============================================================================
+# GAMMA sweep
+# =============================================================================
+[[experiment]]
+name = "low_gamma"
+description = "Reduced GAMMA (0.015)"
+
+D_U  = 0.1
+D_W  = 0.2
+CHI  = 8.3
+ALPHA = 1.0
+BETA  = 0.73
+GAMMA = 0.015
+W_0   = 1.0
+
+[[experiment]]
+name = "high_gamma"
+description = "Increased GAMMA (0.040)"
+
+D_U  = 0.1
+D_W  = 0.2
+CHI  = 8.3
+ALPHA = 1.0
+BETA  = 0.73
+GAMMA = 0.040
+W_0   = 1.0
+
+# =============================================================================
+# W_0 sweep
+# =============================================================================
+[[experiment]]
+name = "low_W0"
+description = "Lower initial W_0 (0.75)"
+
+D_U  = 0.1
+D_W  = 0.2
+CHI  = 8.3
+ALPHA = 1.0
+BETA  = 0.73
+GAMMA = 0.025
+W_0   = 0.75
+
+[[experiment]]
+name = "high_W0"
+description = "Higher initial W_0 (2)"
+
+D_U  = 0.1
+D_W  = 0.2
+CHI  = 8.3
+ALPHA = 1.0
+BETA  = 0.73
+GAMMA = 0.025
+W_0   = 2
